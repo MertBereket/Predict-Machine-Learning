@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Predicts{% endblock %}
+
+{% block content %}
+<form method="POST">
+        <div class="column is-4 is-offset-4">
+            <h3 class="title">Prediction</h3>
+            <div class="box">
+                <form method="post" action="/pred">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Yıl" type="text" placeholder="Yıl" autofocus="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Km" type="text" placeholder="Km" autofocus="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Motor Hacmi" type="text" placeholder="Motor Hacmi" autofocus="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Motor Gücü" type="text" placeholder="Motor Gücü" autofocus="">
+                        </div>
+                    </div>
+                    <button class="button is-block is-info is-large is-fullwidth">Tahmini Değer</button>
+                </form>
+            </div>
+        </div>
+    </form>
+
+
+    {% if context.result %}
+        <div>
+            <h3 class="title">{{ context.result }}₺</h3>
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Raw Form Example{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <div class="column is-4 is-offset-4">
+            <h3 class="title">Sign-In</h3>
+            <div class="box">
+                <form method="post" action="/sign-in">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Name" type="text" placeholder="Name" autofocus="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="Password" type="password" placeholder="Password" autofocus="">
+                        </div>
+                    </div>
+                    <button class="button is-block is-info is-large is-fullwidth">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </form>
+{% endblock %}
